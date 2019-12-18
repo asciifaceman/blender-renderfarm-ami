@@ -1,0 +1,23 @@
+{
+    "provisioners": [],
+    "builders": [{
+        "type": "amazon-ebs",
+        "region": "us-east-1",
+        "subnet_id": "FILL-ME",
+        "security_group_id": "FILL-ME",
+        "associate_public_ip_address": true,
+        "source_ami_filter": {
+          "filters": {
+            "virtualization-type": "hvm",
+            "name": "ubuntu/images/*ubuntu-xenial-18.04-amd64-server-*",
+            "root-device-type": "ebs"
+          },
+          "owners": [""],
+          "most_recent": true
+        },
+        "instance_type": "t2.micro",
+        "ssh_username": "ubuntu",
+        "ami_name": "blender-renderfarm-ami {{timestamp}}"
+      }]
+}
+}

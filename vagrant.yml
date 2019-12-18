@@ -1,0 +1,7 @@
+---
+- name: apply role to local testing
+  hosts: all
+  tags: test_apply
+
+  tasks:
+    
