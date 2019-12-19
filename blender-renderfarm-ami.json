@@ -12,13 +12,6 @@
             "execute_command": "echo '' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
         },
         {
-            "type": "shell-local",
-            "inline": [
-                "rm -r roles/*",
-                "ansible-galaxy install --force -v -r requirements.yml -p roles/"
-            ]
-        },
-        {
             "type": "ansible",
             "playbook_file": "./vagrant.yml"
         }

@@ -1,6 +1,10 @@
 # Blender Renderfarm AMI
 Creates an AMI that contains a Blender instance with the crowd render addon
-installed, enabled, and started with CUDA settings for AWS GPU instances
+installed, enabled, and started with CUDA settings for AWS GPU instances (eventually)
+
+Going to make public AMIs once it's further along.
+
+Current test AMI: ami-03825bcd1e45a4d47s
 
 # TODO
 * Generate packer json with account-specifics
