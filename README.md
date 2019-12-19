@@ -2,12 +2,11 @@
 Creates an AMI that contains a Blender instance with the crowd render addon
 installed, enabled, and started with CUDA settings for AWS GPU instances (eventually)
 
-Going to make public AMIs once it's further along.
+Current Public AMI: 
 
-Current test AMI: ami-03825bcd1e45a4d47s
-
-# TODO
-* Generate packer json with account-specifics
+* US-WEST-1:
+    * `blender-renderfarm-ami 1576738572`
+    * `ami-091c20cb862c73fbd`
 
 # Requirements
 * Ansible 2.6.2+
