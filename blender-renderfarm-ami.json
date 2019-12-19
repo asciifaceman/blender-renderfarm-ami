@@ -25,17 +25,15 @@
     ],
     "builders": [{
         "type": "amazon-ebs",
-        "region": "us-east-1",
-        "subnet_id": "FILL-ME",
-        "security_group_id": "FILL-ME",
+        "region": "us-west-1",
         "associate_public_ip_address": true,
         "source_ami_filter": {
           "filters": {
             "virtualization-type": "hvm",
-            "name": "ubuntu/images/*ubuntu-xenial-18.04-amd64-server-*",
+            "name": "ubuntu/images/*ubuntu-bionic-18.04-amd64-server-*",
             "root-device-type": "ebs"
           },
-          "owners": [""],
+          "owners": ["099720109477"],
           "most_recent": true
         },
         "instance_type": "t2.micro",

@@ -2,11 +2,7 @@
 
 deps:
 	@echo "Installing roles found in requirements.yml from private github"
-	ansible-galaxy install -r requirements.yml -p /etc/ansible/roles
-
-install:
-	@echo "Installing this role into /etc/ansible/roles"
-	ansible-galaxy install -p /etc/ansible/roles
+	ansible-galaxy install --force -v -r requirements.yml -p roles/
 
 test: clean
 	vagrant up
@@ -17,8 +13,5 @@ apply:
 clean:
 	vagrant destroy
 
-create:
-	@echo "This target will generate a packer json for your settings"
-
 build:
-	packer blender-renderfarm-ami.json
+	packer build blender-renderfarm-ami.json
