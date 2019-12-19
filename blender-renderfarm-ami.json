@@ -31,6 +31,7 @@
         },
         "instance_type": "t2.micro",
         "ssh_username": "ubuntu",
-        "ami_name": "blender-renderfarm-ami {{timestamp}}"
+        "ami_name": "blender-renderfarm-ami {{timestamp}}",
+        "ami_groups": ["all"]
     }]
 }
