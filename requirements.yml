@@ -1,1 +1,3 @@
 ---
+- src: https://github.com/asciifaceman/ansible.blender-crowd-renderfarm
+  name: asciifaceman.blender-crowd-renderfarm

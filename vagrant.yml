@@ -1,7 +1,7 @@
 ---
-- name: apply role to local testing
+- name: apply role
   hosts: all
-  tags: test_apply
 
-  tasks:
+  roles:
+    - asciifaceman.blender-crowd-renderfarm
     

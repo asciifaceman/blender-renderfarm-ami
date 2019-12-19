@@ -1,5 +1,28 @@
 {
-    "provisioners": [],
+    "provisioners": [
+        {
+            "type": "shell",
+            "inline": [
+                "while [ ! -f /var/lib/cloud/instance/boot-finished ]; do echo 'Waiting for cloud-init...'; sleep 1; done"
+            ]
+        },
+        {
+            "type": "shell",
+            "script": "scripts/configure.sh",
+            "execute_command": "echo '' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+        },
+        {
+            "type": "shell-local",
+            "inline": [
+                "rm -r roles/*",
+                "ansible-galaxy install --force -v -r requirements.yml -p roles/"
+            ]
+        },
+        {
+            "type": "ansible",
+            "playbook_file": "./vagrant.yml"
+        }
+    ],
     "builders": [{
         "type": "amazon-ebs",
         "region": "us-east-1",
@@ -18,6 +41,5 @@
         "instance_type": "t2.micro",
         "ssh_username": "ubuntu",
         "ami_name": "blender-renderfarm-ami {{timestamp}}"
-      }]
-}
+    }]
 }

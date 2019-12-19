@@ -17,5 +17,8 @@ apply:
 clean:
 	vagrant destroy
 
+create:
+	@echo "This target will generate a packer json for your settings"
+
 build:
 	packer blender-renderfarm-ami.json
